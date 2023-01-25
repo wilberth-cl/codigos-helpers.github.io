@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Helpers</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+      <link href="../css/styles.css" rel="stylesheet">
+
+<script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/tomorrow-night-blue.min.css'>
+<!-- link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/shades-of-purple.min.css' -->
+<!-- link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/pojoaque.min.css' -->
+<!-- link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/paraiso-dark.min.css' -->
+  <!-- link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/gradient-dark.min.css' -->
+    <!-- link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/gradient-dark.min.css' -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js'></script>
+<style type="text/css">
+    pre {
+      box-shadow: 3px 5px 10px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container-fluid font-monospace bg-danger">
+
+<!-- >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> NAV 
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>-->
+    
+<nav class="navbar navbar-expand-lg bg-body-tertiary shadow mb-3">
+  <div class="container-fluid">
+    <a class="navbar-brand fw-bold" href="../../index.html">Helpers <span class="fs-6 fst-italic"> <- Regresar</span></a>
+  </div> 
+</nav>
+  
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////// NAV 
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////-->
+
+
+<!-- >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> C O D E
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>-->
+<div class="card border border-0 w-auto shadow-lg">
+
+  <div class="card-header text-primary fw-bold shadow text-center">Titulo</div>
+  <div class="card-body">
+
+      <p class="fw-bold">In the component:</p>
+      <pre><code class="language-php">
+        public function a(){
+          $this->dispatchBrowserEvent('alertSetTimeout');
+        }
+      </code></pre>
+
+      <p class="fw-bold">In the view-component:</p>
+      <pre><code class="language-js">
+           @if(session()->has('message'))
+                  &lt;div class="alert bg-green-700 text-white mx-8 mt-0 mb-4 px-4 py-3 shadow-md shadow-slate-400 rounded relative" role="alert">
+                      &lt;span class="block sm:inline">{{ session('message') }}&lt;/span>
+                  &lt;/div>
+          @endif
+      </code></pre>
+
+      <pre><code class="language-php">
+          @section('scripts')
+            &lt;script type="text/javascript">
+                document.addEventListener('alpine:initialized', () => {
+
+                    window.addEventListener('alertSetTimeout', () => {
+
+                        window.setTimeout(function() {
+                        $(".alert").fadeTo(1000, 0).slideUp(1000, function(){
+                            $(this).remove();
+                        });
+                        }, 10000);
+                    });
+
+                });
+            &lt;/script>
+          @endsection
+      </code></pre>
+
+  </div>
+</div>
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////// C O D E 
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+
+
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+    <script type="text/javascript" src="../../js/scripts.js"></script>
+</body>
+
+</html>
