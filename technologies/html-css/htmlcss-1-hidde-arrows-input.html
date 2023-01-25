@@ -65,38 +65,22 @@
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>-->
 <div class="card border border-0 w-auto shadow-lg">
 
-  <div class="card-header text-primary fw-bold shadow text-center">Javascript Confirm & Livewire (CRUD)</div>
+  <div class="card-header text-primary fw-bold shadow text-center">Hide Arrows From Input Number</div>
   <div class="card-body">
 
-      <p class="fw-bold">In the component:</p>
-      <pre><code class="language-php">
-        protected $listeners = ['destroy'];
-      
-        public function destroy($id)
-    	{
-        	$unit = Unit::findOrFail($id);
-        	$unit->delete();
-        	session()->flash('message','¡Baja exitosa!');
-    	}
+      <p class="fw-bold">In CSS:</p>
+      <pre><code class="language-css">
+          /* Chrome, Safari, Edge, Opera */
+          input::-webkit-outer-spin-button,
+          input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+          }
+          /* Firefox */
+          input[type=number] {
+            --moz-appearance: textfield;
+          }
       </code></pre>
-
-      <p class="fw-bold">In the view-component:</p>
-      <pre><code class="language-html">
-      &lt;button wire:click="$emit('delete',{{ $unit->id }})">Delete&lt;/button>
-      </code></pre>
-
-      <p class="fw-bold">In the scripts view-component:</p>
-      <pre><code class="language-js">
-        document.addEventListener('alpine:initialized', () => { 
-        Livewire.on('delete', unid_id => {  
-            if(confirm("¡Confirmar Eliminar!")){ 
-                Livewire.emitTo('units','destroy', unid_id); 
-            }else{ 
-                alert('¡cancelado!'); 
-            } 
-        }); 
-      });
-      </code></pre>  
 
   </div>
 </div>
@@ -111,12 +95,12 @@
 
 
 
-
 <div class="row">
   <div class="col-12 text-center">
     <a id="dark-mode-title" class="btn" style="color: black;" href="https://github.com/wilberth-cl">by wilberth-cl with power of github.com</a> 
   </div>
 </div>
+
 
   </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
