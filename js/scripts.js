@@ -6,8 +6,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
   $(document).on('click', function(e){
     $("span#dark-mode").click(function(){
-             var element = document.body;
-                element.classList.toggle("dark-mode");
+        var element = document.body;
+        element.classList.toggle("dark-mode");
+
+        document.getElementById('dark-mode-title').style.color == 'black' ? 
+        document.getElementById('dark-mode-title').style.color = 'white' :
+        document.getElementById('dark-mode-title').style.color = 'black'
+
   });
 
 
